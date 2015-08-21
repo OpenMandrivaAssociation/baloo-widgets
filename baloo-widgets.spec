@@ -1,34 +1,49 @@
+%define baloowidgets_major 5
+%define libbaloowidgets %mklibname KF5BalooWidgets %{baloowidgets_major}
+
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	4.14.3
-Release:	3
+Version:	15.08.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	baloo-devel
-BuildRequires:	kdelibs4-devel
-BuildRequires:	kdepimlibs4-devel
+BuildRequires:	cmake
+BuildRequires:	ninja
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5Baloo)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5FileMetaData)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	kfilemetadata-devel
-BuildRequires:	pkgconfig(akonadi)
+Requires:	%{libbaloowidgets} = %{EVRD}
 
 %description
 Widgets for Baloo.
 
+%files
+%{_bindir}/baloo_filemetadata_temp_extractor
+
 #--------------------------------------------------------------------
-
-%define baloowidgets_major 4
-%define libbaloowidgets %mklibname baloowidgets %{baloowidgets_major}
-
 %package -n %{libbaloowidgets}
 Summary:	Shared library for Baloo Widgets
 Group:		System/Libraries
+Obsoletes:	%{mklibname baloowidgets 4}
+Requires:	%{name} = %{EVRD}
 
 %description -n %{libbaloowidgets}
 Shared library for Baloo Widgets.
 
 %files -n %{libbaloowidgets}
-%{_kde_libdir}/libbaloowidgets.so.%{baloowidgets_major}*
+%{_libdir}/libKF5BalooWidgets.so.%{baloowidgets_major}*
 
 #--------------------------------------------------------------------
 
@@ -46,34 +61,18 @@ This package contains header files needed if you wish to build applications
 based on Baloo Widgets.
 
 %files -n %{devbaloowidgets}
-%{_kde_includedir}/baloo/*
-%{_kde_libdir}/cmake/BalooWidgets
-%{_kde_libdir}/libbaloowidgets.so
+%{_includedir}/KF5/BalooWidgets
+%{_libdir}/cmake/KF5BalooWidgets
+%{_libdir}/libKF5BalooWidgets.so
 
 #--------------------------------------------------------------------
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
-
-%changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.3-1
-- New version 4.14.3
-
-* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.2-1
-- New version 4.14.2
-
-* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
-- New version 4.14.1
-
-* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
-- New version 4.13.3
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
-- Initial Rosa package
+%ninja_install -C build
