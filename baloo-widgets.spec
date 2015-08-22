@@ -9,8 +9,6 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5Baloo)
 BuildRequires:	cmake(KF5Config)
@@ -23,7 +21,7 @@ BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	kfilemetadata-devel
+BuildRequires:	cmake(KF5KDELibs4Support)
 Requires:	%{libbaloowidgets} = %{EVRD}
 
 %description
