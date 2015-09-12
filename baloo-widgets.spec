@@ -4,7 +4,7 @@
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
 Version:	15.08.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -52,7 +52,7 @@ Shared library for Baloo Widgets.
 Summary:	Devel stuff for Baloo Wigets
 Group:		Development/KDE and Qt
 Requires:	%{libbaloowidgets} = %{EVRD}
-Requires:	baloo-devel
+Requires:	baloo5-devel
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devbaloowidgets}
