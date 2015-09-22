@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   baloo-widgets-15.08.0.tar.xz: 268cbd1752f236c818aafd2d250b2fd7b984d1db
+sources:
+  baloo-widgets-15.08.1.tar.xz: c0f22c10196213777159cec5e582986744d394ad
