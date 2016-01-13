@@ -3,12 +3,18 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	15.12.0
-Release:	2
+Version:	15.12.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %{is_beta}
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Source0:        http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5Baloo)
 BuildRequires:	cmake(KF5Config)
