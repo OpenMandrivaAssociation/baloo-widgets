@@ -3,7 +3,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	15.12.3
+Version:	16.04.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
