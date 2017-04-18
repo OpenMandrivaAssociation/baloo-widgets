@@ -3,7 +3,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	17.03.80
+Version:	17.04.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -34,7 +34,7 @@ Requires:	%{libbaloowidgets} = %{EVRD}
 %description
 Widgets for Baloo.
 
-%files
+%files -f %{name}.lang
 %{_bindir}/baloo_filemetadata_temp_extractor
 
 #--------------------------------------------------------------------
@@ -81,3 +81,6 @@ based on Baloo Widgets.
 
 %install
 %ninja_install -C build
+%find_lang baloo_naturalqueryparser
+%find_lang baloowidgets
+cat *.lang >%{name}.lang
