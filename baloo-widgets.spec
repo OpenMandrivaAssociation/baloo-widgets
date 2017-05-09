@@ -3,7 +3,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	17.04.0
+Version:	17.04.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -82,5 +82,5 @@ based on Baloo Widgets.
 %install
 %ninja_install -C build
 %find_lang baloo_naturalqueryparser
-%find_lang baloowidgets
+%find_lang baloowidgets5
 cat *.lang >%{name}.lang
