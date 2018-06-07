@@ -3,7 +3,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -36,6 +36,8 @@ Widgets for Baloo.
 
 %files -f %{name}.lang
 %{_bindir}/baloo_filemetadata_temp_extractor
+%{_libdir}/qt5/plugins/baloofilepropertiesplugin.so
+%{_datadir}/kservices5/baloofilepropertiesplugin.desktop
 
 #--------------------------------------------------------------------
 %package -n %{libbaloowidgets}
@@ -58,7 +60,7 @@ Shared library for Baloo Widgets.
 Summary:	Devel stuff for Baloo Wigets
 Group:		Development/KDE and Qt
 Requires:	%{libbaloowidgets} = %{EVRD}
-Requires:	baloo5-devel
+Requires:	baloo-devel
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devbaloowidgets}
@@ -81,6 +83,5 @@ based on Baloo Widgets.
 
 %install
 %ninja_install -C build
-%find_lang baloo_naturalqueryparser
 %find_lang baloowidgets5
 cat *.lang >%{name}.lang
