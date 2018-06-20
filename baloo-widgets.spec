@@ -16,6 +16,10 @@ Url:		https://www.kde.org/
 %endif
 Source0:        http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(KF5Baloo)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5ConfigWidgets)
@@ -24,11 +28,6 @@ BuildRequires:	cmake(KF5FileMetaData)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5WidgetsAddons)
-BuildRequires:	cmake(Qt5Core)
-BuildRequires:	cmake(Qt5Gui)
-BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	cmake(KF5KDELibs4Support)
-BuildRequires:	cmake(Qt5Test)
 Requires:	%{libbaloowidgets} = %{EVRD}
 
 %description
