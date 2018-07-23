@@ -59,7 +59,7 @@ Shared library for Baloo Widgets.
 Summary:	Devel stuff for Baloo Wigets
 Group:		Development/KDE and Qt
 Requires:	%{libbaloowidgets} = %{EVRD}
-Requires:	baloo-devel
+Requires:	cmake(KF5Baloo)
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devbaloowidgets}
