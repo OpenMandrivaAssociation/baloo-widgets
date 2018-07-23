@@ -1,4 +1,5 @@
 removed_sources:
   baloo-widgets-17.12.1.tar.xz: d0d2d42185249ce61a58b33acc65c735f796922c
-sources:
   baloo-widgets-17.12.2.tar.xz: b4d865f7e803696119ea429afeb437f2bb56bee4
+sources:
+  baloo-widgets-17.12.3.tar.xz: 546666313ada755a774b1fd909cfc5401585d31d
