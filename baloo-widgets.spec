@@ -29,6 +29,7 @@ BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(KF5KDELibs4Support)
 BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5Concurrent)
 Requires:	%{libbaloowidgets} = %{EVRD}
 
 %description
