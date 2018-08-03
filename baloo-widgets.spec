@@ -1,20 +1,15 @@
-%define baloowidgets_major 18
+%define baloowidgets_major 5
 %define libbaloowidgets %mklibname KF5BalooWidgets %{baloowidgets_major}
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	18.07.80
+Version:	18.07.90
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
-%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %{is_beta}
-%define ftpdir unstable
-%else
-%define ftpdir stable
-%endif
-Source0:        http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+Source0:        http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
@@ -51,6 +46,7 @@ Shared library for Baloo Widgets.
 
 %files -n %{libbaloowidgets}
 %{_libdir}/libKF5BalooWidgets.so.%{baloowidgets_major}*
+%{_libdir}/libKF5BalooWidgets.so.18*
 
 #--------------------------------------------------------------------
 
