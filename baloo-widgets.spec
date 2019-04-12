@@ -3,8 +3,8 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	18.12.3
-Release:	2
+Version:	19.04.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -33,6 +33,7 @@ Widgets for Baloo.
 %{_bindir}/baloo_filemetadata_temp_extractor
 %{_libdir}/qt5/plugins/baloofilepropertiesplugin.so
 %{_datadir}/kservices5/baloofilepropertiesplugin.desktop
+%{_libdir}/qt5/plugins/kf5/kfileitemaction/tagsfileitemaction.so
 
 #--------------------------------------------------------------------
 %package -n %{libbaloowidgets}
@@ -46,7 +47,7 @@ Shared library for Baloo Widgets.
 
 %files -n %{libbaloowidgets}
 %{_libdir}/libKF5BalooWidgets.so.%{baloowidgets_major}*
-%{_libdir}/libKF5BalooWidgets.so.18*
+%{_libdir}/libKF5BalooWidgets.so.%(echo %{version} |cut -d. -f1)*
 
 #--------------------------------------------------------------------
 
