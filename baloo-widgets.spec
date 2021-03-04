@@ -3,7 +3,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	20.12.2
+Version:	20.12.3
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
