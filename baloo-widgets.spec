@@ -3,7 +3,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -31,9 +31,8 @@ Widgets for Baloo.
 
 %files -f %{name}.lang
 %{_bindir}/baloo_filemetadata_temp_extractor
-%{_libdir}/qt5/plugins/baloofilepropertiesplugin.so
-%{_datadir}/kservices5/baloofilepropertiesplugin.desktop
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/tagsfileitemaction.so
+%{_libdir}/qt5/plugins/kf5/propertiesdialog/baloofilepropertiesplugin.so
 %{_datadir}/qlogging-categories5/baloo-widgets.categories
 
 #--------------------------------------------------------------------
