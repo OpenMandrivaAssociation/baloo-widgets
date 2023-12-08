@@ -4,7 +4,7 @@
 Summary:	Widgets for Baloo
 Name:		plasma6-baloo-widgets
 Version:	24.01.80
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -40,7 +40,6 @@ Widgets for Baloo.
 %package -n %{libbaloowidgets}
 Summary:	Shared library for Baloo Widgets
 Group:		System/Libraries
-Obsoletes:	%{mklibname baloowidgets 4}
 Requires:	%{name} = %{EVRD}
 
 %description -n %{libbaloowidgets}
@@ -52,7 +51,7 @@ Shared library for Baloo Widgets.
 
 #--------------------------------------------------------------------
 
-%define devbaloowidgets %mklibname baloo-widgets -d
+%define devbaloowidgets %mklibname KF6BalooWidgets -d
 
 %package -n %{devbaloowidgets}
 Summary:	Devel stuff for Baloo Wigets
