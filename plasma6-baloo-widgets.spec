@@ -13,7 +13,7 @@ Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %if 0%{?git:1}
-Source0:	https://invent.kde.org/libraries/baloo-widgets/-/archive/%{gitbranch}/baloo-widgets-%{gitbranchd}.tar.bz2#/baloo-widgets-20240217.tar.bz2
+Source0:	https://invent.kde.org/libraries/baloo-widgets/-/archive/%{gitbranch}/baloo-widgets-%{gitbranchd}.tar.bz2#/baloo-widgets-%{git}.tar.bz2
 %else
 Source0:        http://download.kde.org/%{stable}/release-service/%{version}/src/baloo-widgets-%{version}.tar.xz
 %endif
