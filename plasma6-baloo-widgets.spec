@@ -6,8 +6,8 @@
 
 Summary:	Widgets for Baloo
 Name:		plasma6-baloo-widgets
-Version:	24.08.3
-Release:	%{?git:0.%{git}.}2
+Version:	24.12.0
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
