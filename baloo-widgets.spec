@@ -5,7 +5,7 @@
 %define libbaloowidgets %mklibname KF6BalooWidgets
 
 Summary:	Widgets for Baloo
-Name:		plasma6-baloo-widgets
+Name:		baloo-widgets
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
