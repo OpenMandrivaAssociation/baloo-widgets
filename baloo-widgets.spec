@@ -6,7 +6,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -33,6 +33,10 @@ BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6WidgetsAddons)
 Requires:	%{libbaloowidgets} = %{EVRD}
+%rename plasma6-baloo-widgets
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Widgets for Baloo.
@@ -75,20 +79,3 @@ based on Baloo Widgets.
 %{_includedir}/KF6/BalooWidgets
 %{_libdir}/cmake/KF6BalooWidgets
 %{_libdir}/libKF6BalooWidgets.so
-
-#--------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n baloo-widgets-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DQT_MAJOR_VERSION=6 \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang baloowidgets5
-cat *.lang >%{name}.lang
