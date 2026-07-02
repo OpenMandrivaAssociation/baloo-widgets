@@ -6,7 +6,7 @@
 
 Summary:	Widgets for Baloo
 Name:		baloo-widgets
-Version:	26.04.2
+Version:	26.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
